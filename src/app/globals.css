@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    @apply
+    m-0
+    p-0
+    outline-none
+    box-border
+}
+li{
+    @apply
+    list-none
+}

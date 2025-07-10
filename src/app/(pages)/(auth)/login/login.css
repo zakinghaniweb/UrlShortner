@@ -1,0 +1,161 @@
+.login{
+    @apply
+    w-[440px]
+    bg-[#FFFFFF]
+    rounded-[16px]
+}
+.login-row{
+    @apply
+    p-[40px]
+}
+/* Login Head */
+.login-head .login-logo{
+    @apply
+    w-full
+    flex
+    justify-center
+}
+.login-head .login-logo img{
+    @apply
+    w-[64px]
+}
+.login-head h1{
+    @apply
+    font-poppins
+    font-bold
+    text-[24px]
+    mt-[15px]
+    text-center
+}
+.login-head p{
+    @apply
+    font-poppins
+    font-normal
+    text-[14px]
+    text-center
+}
+/* Login Form */
+.login-form{
+    @apply
+    w-full
+    mt-[30px]
+    flex
+    flex-col
+    justify-center
+}
+.login-form .login-input-group{
+    @apply
+    flex
+    w-[360px]
+    h-[48px]
+    border-[2px]
+    border-[#E8EDF2]
+    rounded-[8px]
+    mt-[8px]
+    mb-[20px]
+}
+.login-form .login-input-group input{
+    @apply
+    w-full
+    h-full
+    rounded-[8px]
+    font-poppins
+    font-normal
+    text-[14px]
+    pl-[15px]
+}
+.login-form .login-input-group i{
+    @apply
+    text-[16px]
+    text-[#9A9AAF]
+    p-[15px]
+}
+.login-form label{
+    @apply
+    font-poppins
+    font-normal
+    text-[14px]
+    text-[#07070C]
+}
+.login-form .login-submit{
+    @apply
+    w-full
+    py-[14px]
+    bg-brandColor
+    rounded-lg
+    font-poppins
+    font-semibold
+    text-[16px]
+    text-[#FFFFFF]
+}
+/* Other options */
+.other-options{
+    @apply
+    mb-[20px]
+    flex
+    justify-between
+}
+.other-options .login-option{
+    @apply
+    w-[170px]
+    h-[50px]
+    border-[2px]
+    border-[#E8EDF2]
+    flex
+    items-center
+    gap-[10px]
+    pl-[12px]
+    rounded-[8px]
+}
+.other-options .login-option img{
+    @apply
+    w-[20px]
+}
+.other-options .login-option p{
+    @apply
+    font-poppins
+    font-normal
+    text-[12px]
+    text-[#07070C]
+}
+.alert{
+    @apply
+    w-full
+    h-[52px]
+    flex
+    items-center
+    pl-[20px]
+    bg-[#F1000020]
+    border-[1px]
+    border-red-500
+    rounded-lg
+    mb-[10px]
+}
+.alert p{
+    @apply
+    font-poppins
+    font-semibold
+    text-[14px]
+    text-red-600
+}
+
+.success{
+    @apply
+    w-full
+    h-[52px]
+    flex
+    items-center
+    pl-[20px]
+    bg-[#02D40520]
+    border-[1px]
+    border-green-500
+    rounded-lg
+    mb-[10px]
+}
+.success p{
+    @apply
+    font-poppins
+    font-semibold
+    text-[14px]
+    text-green-600
+}

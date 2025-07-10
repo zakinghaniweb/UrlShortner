@@ -1,0 +1,145 @@
+.shortURL{
+    @apply
+    w-[640px]
+    bg-[#FFFFFF]
+    rounded-[16px]
+}
+.shortURL-row{
+    @apply
+    p-[40px]
+}
+/* Short URL Head */
+.shortURL-head h1{
+    @apply
+    font-poppins
+    font-bold
+    text-[24px]
+    text-brandColor
+    mt-[15px]
+    text-center
+}
+.shortURL-head p{
+    @apply
+    font-poppins
+    font-normal
+    text-[14px]
+    text-center
+}
+/* Short URL Form */
+.shortURL-form{
+    @apply
+    w-full
+    mt-[30px]
+    flex
+    flex-col
+    justify-center
+}
+.shortURL-form .shortURL-input-group{
+    @apply
+    flex
+    w-full
+    h-[48px]
+    border-[2px]
+    border-[#E8EDF2]
+    rounded-[8px]
+    mt-[8px]
+    mb-[20px]
+}
+.shortURL-form .shortURL-input-group input{
+    @apply
+    w-full
+    h-full
+    rounded-[8px]
+    font-poppins
+    font-normal
+    text-[14px]
+    pl-[15px]
+}
+.shortURL-form .shortURL-input-group i{
+    @apply
+    text-[16px]
+    text-[#9A9AAF]
+    p-[15px]
+}
+.shortURL-form label{
+    @apply
+    font-poppins
+    font-normal
+    text-[14px]
+    text-[#07070C]
+}
+.shortURL-form .shortURL-submit{
+    @apply
+    w-full
+    py-[14px]
+    bg-brandColor
+    rounded-lg
+    font-poppins
+    font-semibold
+    text-[16px]
+    text-[#FFFFFF]
+}
+/* Other options */
+.other-options{
+    @apply
+    mb-[20px]
+    flex
+    justify-between
+}
+.other-options .shortURL-option p{
+    @apply
+    font-poppins
+    font-normal
+    text-[12px]
+    text-[#07070C]
+}
+.alert{
+    @apply
+    w-full
+    h-[52px]
+    flex
+    items-center
+    pl-[20px]
+    bg-[#F1000020]
+    border-[1px]
+    border-red-500
+    rounded-lg
+    mb-[10px]
+}
+.alert p{
+    @apply
+    font-poppins
+    font-semibold
+    text-[14px]
+    text-red-600
+}
+
+.success{
+    @apply
+    w-full
+    h-[52px]
+    flex
+    items-center
+    pl-[20px]
+    bg-[#02D40520]
+    border-[1px]
+    border-green-500
+    rounded-lg
+    mb-[10px]
+}
+.success p{
+    @apply
+    font-poppins
+    font-semibold
+    text-[14px]
+    text-green-600
+}
+.url-result h3{
+    @apply
+    mt-[5px]
+    
+    font-poppins
+    font-semibold
+    text-lg
+    text-brandColor
+}
