@@ -30,9 +30,10 @@ const Login = () => {
     console.log(res400)
       axios.post("http://localhost:8000/auth/login", loginData)
     .then(res => {
-      setRes400(res.data)
-      dispatch(userInfo(loginData))
-      localStorage.setItem("userInfo", JSON.stringify(loginData))
+      console.log(res.data)
+      setRes400(res.data.message)
+      dispatch(userInfo(res.data.DBuser))
+      localStorage.setItem("userInfo", JSON.stringify(res.data.DBuser))
     })
     .catch(err => {
       setResErr(err.response?.data?.message)
@@ -56,7 +57,7 @@ const Login = () => {
                   }
                   {
                     res400 != "" &&
-                    <div className="success"><p>{res400.message}</p></div>
+                    <div className="success"><p>{res400}</p></div>
                   }
                   <form onSubmit={handleLogin}>
                       <label htmlFor="email">E-mail or phone number</label>

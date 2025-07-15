@@ -30,12 +30,12 @@ const Register = () => {
     setRes200("")
     axios.post("http://localhost:8000/auth/register", registerData)
     .then(res => {
-      setRes200(res.data)
-      dispatch(userInfo(registerData))
-      localStorage.setItem("userInfo", JSON.stringify(registerData))
+      setRes200(res.data.message)
+      dispatch(userInfo(res.data.DBuser))
+      localStorage.setItem("userInfo", JSON.stringify(res.data.DBuser))
     })
     .catch(err => {
-      setResErr(err.response.data)
+      setResErr(err.response.data.message)
     })
   }
   return (
