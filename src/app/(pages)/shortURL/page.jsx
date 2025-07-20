@@ -4,6 +4,7 @@ import "./shortURL.css"
 import { useState } from "react"
 import { FaLink } from "react-icons/fa"
 import axios from "axios"
+import { useAppSelector } from "@/lib/hooks"
 
 const shortURL = () => {
   // State Vars ==>
@@ -11,12 +12,45 @@ const shortURL = () => {
     const [successMsg,setSuccessMsg] = useState("")
     const [error,setError] = useState("")
     const [urlResult,setURLResult] = useState([])
+    const userId = useAppSelector(state=>state.User.value?._id)
+
   // Function ==>
+  function getFaviconUrl(siteUrl) {
+    try {
+      const url = new URL(siteUrl)
+      return `${url.origin}/favicon.ico`
+    } catch {
+      return null
+    }
+  }
+  function extractSiteName(url) {
+  try {
+    let hostname = new URL(url).hostname
+    if (hostname.startsWith('www.')) hostname = hostname.slice(4)
+    const parts = hostname.split('.')
+    const tlds2 = ['co.uk', 'org.uk', 'gov.uk', 'ac.uk']
+    let domain = ''
+    const lastTwo = parts.slice(-2).join('.')
+    if (tlds2.includes(lastTwo) && parts.length > 2) {
+      domain = parts[parts.length - 3]
+    } else {
+      domain = parts[parts.length - 2]
+    }
+    return domain.charAt(0).toUpperCase() + domain.slice(1)
+  } catch {
+    return 'Invalid URL'
+  }
+}
     const handleSubmit = (e)=>{
       e.preventDefault()
       setSuccessMsg("")
       setError("")
-      axios.post("http://localhost:8000/url/shortURL",{url})
+      axios.post("http://localhost:8000/url/shortURL",{
+        url,
+        name: extractSiteName(url),
+        userId,
+        favicon: getFaviconUrl(url),
+      })
       .then(res=>{
         setSuccessMsg(res.data.message)
         setURLResult(res.data.info)
@@ -31,7 +65,6 @@ const shortURL = () => {
         }
       })
     }
-    console.log(urlResult)
   return (
     <div className='flex justify-center items-center h-screen bg-[#E8EDF2]'>
         <div className="shortURL">

@@ -25,6 +25,15 @@
     whitespace-nowrap
 }
 
+.dashboard-table td a{
+  @apply 
+    font-poppins
+    font-semibold
+    underline
+    underline-offset-1
+    text-brandColor
+}
+
 .dashboard-table tbody tr {
   @apply 
     border-b
@@ -38,12 +47,16 @@
 }
 
 .dashboard-table .icon-cell {
-  @apply 
+  @apply
     h-full
     items-center
     justify-center
     text-brandColor
-    align-middle;
+    align-middle
+}
+.dashboard-table .icon-cell img{
+  @apply
+    w-[30px]
 }
 
 .dashboard-table .action-cell {
